@@ -1,0 +1,78 @@
+/* ==============================================
+   ONLYUS METAL / SKULL THEME - Billy Barbeau
+   Dark, aggressive, red-black-spiky
+   ============================================== */
+
+:root {
+    --bg: #0f0f0f;
+    --dark: #1a1a1a;
+    --accent: #c00;
+    --accent-glow: #f00;
+    --text: #ddd;
+    --metal: #444;
+}
+
+* {
+    box-shadow: none !important;
+}
+
+body, html, .main-container, .landing, .room, .chat-container {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Headers & Top Bar - Metal/Red */
+header, .navbar, .top-bar, .header, .landing-header {
+    background: linear-gradient(180deg, #2c0a0a, #1a0000) !important;
+    border-bottom: 4px solid var(--accent) !important;
+    box-shadow: 0 4px 15px rgba(200, 0, 0, 0.6) !important;
+}
+
+/* Buttons - Spiky Red */
+.btn, button, .join-button, .action-btn {
+    background: #900 !important;
+    color: white !important;
+    border: 3px solid #f00 !important;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    box-shadow: 0 0 12px var(--accent-glow) !important;
+    transition: all 0.2s;
+}
+
+.btn:hover, button:hover {
+    background: #c00 !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff0 !important;
+}
+
+/* Inputs & Chat */
+input, textarea, .message-input, .form-control {
+    background: #111 !important;
+    border: 2px solid #500 !important;
+    color: #fff !important;
+}
+
+/* Cards & Panels - Metal look */
+.card, .sidebar, .chat-messages, .room-list, .panel {
+    background: var(--dark) !important;
+    border: 3px solid #400 !important;
+    box-shadow: 0 0 20px rgba(150, 0, 0, 0.5) !important;
+}
+
+/* Red glows & accents */
+a, .active, .highlight, .new-message {
+    color: #ff6666 !important;
+    text-shadow: 0 0 8px #f00;
+}
+
+/* Skull vibe - extra borders */
+.spiky {
+    border-image: linear-gradient(#f00, #900) 1 !important;
+}
+
+/* Hide original branding leftovers */
+.powered-by, .mirotalk, .sponsor, .footer-brand {
+    display: none !important;
+}
