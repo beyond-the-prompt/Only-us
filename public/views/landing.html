@@ -1,116 +1,108 @@
 <!doctype html>
-<html lang="en" class="no-js">
-    <head>
-        <title id="landingTitle">OnlyUs — Private messaging Chat & Video by Billy Barbeau</title>
-        <link id="shortcutIcon" rel="shortcut icon" href="../images/favicon.ico" />
-        <link id="appleTouchIcon" rel="apple-touch-icon" href="../images/Logo.png" />
+<html lang="en">
+<head>
+    <title>Onlyus — Private Chat & Video by Billy Barbeau</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../images/Logo.png" />
 
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta name="description" content="Onlyus by Billy Barbeau — Private peer-to-peer chat, video calls, and media sharing." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/onlyus-metal.css" />
 
-        <meta property="og:type" content="app-webrtc" />
-        <meta property="og:site_name" content="Onlyus" />
-        <meta property="og:title" content="Onlyus — Private P2P Chat & Video by Billy Barbeau" />
-        <meta property="og:description" content="End-to-end encrypted. Dark. Brutal. Yours." />
-        <meta property="og:image" content="../images/preview.jpg" />
-        <meta property="og:url" content="https://onlyus.yourdomain.com" />
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: #0a0a0a url('../images/preview.jpg') center/cover fixed;
+            color: #ddd;
+            font-family: system-ui, sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .overlay {
+            background: linear-gradient(180deg, rgba(10,10,10,0.95), rgba(100,0,0,0.85));
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            max-width: 800px;
+        }
+        img.logo {
+            width: 220px;
+            filter: drop-shadow(0 0 40px #f00);
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 5.5rem;
+            color: #ff0000;
+            text-shadow: 0 0 40px #f00, 0 0 80px #800;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 2.3rem;
+            color: #ffaaaa;
+            margin-bottom: 40px;
+        }
+        input {
+            width: 340px;
+            padding: 18px 20px;
+            font-size: 1.4rem;
+            background: #111;
+            border: 4px solid #500;
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 20px 70px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: #900;
+            color: white;
+            border: 4px solid #f00;
+            box-shadow: 0 0 30px #f00;
+            cursor: pointer;
+            margin: 8px;
+        }
+        button:hover {
+            background: #c00;
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="content">
+            <img src="../images/Logo.png" class="logo" alt="Onlyus">
 
-        <script src="https://cdn.jsdelivr.net/npm/xss/dist/xss.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+            <h1>ONLYUS</h1>
+            <div class="tagline">PRIVATE CHAT & VIDEO MESSAGING</div>
+            
+            <p style="font-size:1.35rem; max-width:620px; margin:0 auto 50px; line-height:1.5;">
+                End-to-end encrypted peer-to-peer.<br>
+                No tracking. No servers holding your data.<br>
+                <strong>Made by Billy Barbeau</strong>
+            </p>
 
-        <link rel="stylesheet" href="../css/landing.css" />
-        <link rel="stylesheet" href="../css/newcall.css" />
-        <link rel="stylesheet" href="../css/onlyus-metal.css" />
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-        <script defer src="../js/stats.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8"></script>
-        <script defer src="../js/widget.js"></script>
-    </head>
-    <body class="has-animations">
-        <div class="body-wrap">
-            <header class="site-header reveal-from-top">
-                <div class="container">
-                    <div class="site-header-inner">
-                        <div class="brand">
-                            <a href="/">
-                                <img src="../images/Logo.png" alt="Onlyus" width="64" height="64" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            <main class="site-content">
-                <section class="hero section illustration-section-01">
-                    <div class="container">
-                        <div class="hero-inner section-inner">
-                            <div class="split-wrap invert-mobile">
-                                <div class="split-item">
-                                    <div class="hero-content split-item-content center-content-mobile">
-                                        <h1 id="appTitle" class="mt-32 mb-16 reveal-from-bottom" data-reveal-delay="150" style="color:#ff0000; text-shadow: 0 0 25px #c00; font-size: 3.5rem;">
-                                            ONLYUS
-                                        </h1>
-                                        <h2 style="color:#ddd; margin-top:-15px; font-size: 1.8rem;">PRIVATE CHAT & VIDEO</h2>
-                                        <p id="appDescription" class="mt-8 mb-32 reveal-from-bottom" data-reveal-delay="300" style="font-size:1.2rem; color:#aaa;">
-                                            End-to-end encrypted peer-to-peer.<br>
-                                            No tracking. No servers.<br>
-                                            Made by Billy Barbeau.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="cta section center-content-mobile reveal-from-bottom mb-32">
-                    <div class="container">
-                        <div class="cta-inner section-inner cta-split br-12">
-                            <div class="cta-slogan">
-                                <h3 id="appJoinDescription" class="m-0" style="color:#ff6666;">
-                                    Pick a room name.<br />How about this one?
-                                </h3>
-                            </div>
-                            <div class="cta-action">
-                                <div class="mb-0">
-                                    <div class="room-input-wrap">
-                                        <input id="roomName" class="form-input" type="text" value="onlyus" maxlength="32" />
-                                        <button id="genRoomButton" class="room-gen-btn fas fa-arrows-rotate"></button>
-                                    </div>
-                                    <button id="joinRoomButton" class="button button-primary br-6">
-                                        JOIN ROOM
-                                    </button>
-                                </div>
-                                <div class="mt-16">
-                                    <button id="customizeRoomButton" class="button button-custom-room button-block br-6">
-                                        CUSTOMIZE ROOM
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <footer class="site-footer center-content-mobile">
-                <div class="container">
-                    <div class="footer-bottom text-xxs">
-                        <div class="footer-copyright">
-                            © 2026 Onlyus by Billy Barbeau — Private Peer-to-Peer
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <input id="roomName" type="text" value="onlyus" maxlength="32" placeholder="Room name" />
+            <br>
+            <button onclick="joinRoom()">JOIN ROOM</button>
+            <button onclick="alert('Room customization & profile coming soon')">CUSTOMIZE ROOM</button>
         </div>
+    </div>
 
-        <script defer src="../js/utils.js"></script>
-        <script defer src="../js/common.js"></script>
-        <script defer src="../js/brand.js"></script>
-        <script defer src="../js/landing.js"></script>
-    </body>
+    <script>
+        function joinRoom() {
+            const room = document.getElementById('roomName').value.trim() || "onlyus";
+            window.location.href = `../newcall.html?room=${encodeURIComponent(room)}`;
+        }
+    </script>
+</body>
 </html>
