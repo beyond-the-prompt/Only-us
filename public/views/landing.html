@@ -12,13 +12,12 @@
     <link rel="stylesheet" href="../css/onlyus-metal.css" />
 
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
         body {
             background: #0a0a0a url('../images/preview.jpg') center/cover fixed;
             color: #ddd;
             font-family: system-ui, sans-serif;
+            margin: 0;
             min-height: 100vh;
-            overflow: hidden;
         }
         .overlay {
             background: linear-gradient(180deg, rgba(10,10,10,0.95), rgba(100,0,0,0.85));
@@ -29,79 +28,35 @@
             text-align: center;
             padding: 20px;
         }
-        .content {
-            max-width: 800px;
-        }
-        img.logo {
-            width: 220px;
-            filter: drop-shadow(0 0 40px #f00);
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 5.5rem;
-            color: #ff0000;
-            text-shadow: 0 0 40px #f00, 0 0 80px #800;
-            letter-spacing: 8px;
-            margin-bottom: 10px;
-        }
-        .tagline {
-            font-size: 2.3rem;
-            color: #ffaaaa;
-            margin-bottom: 40px;
-        }
-        input {
-            width: 340px;
-            padding: 18px 20px;
-            font-size: 1.4rem;
-            background: #111;
-            border: 4px solid #500;
-            color: white;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-        button {
-            padding: 20px 70px;
-            font-size: 1.6rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            background: #900;
-            color: white;
-            border: 4px solid #f00;
-            box-shadow: 0 0 30px #f00;
-            cursor: pointer;
-            margin: 8px;
-        }
-        button:hover {
-            background: #c00;
-            transform: scale(1.08);
-        }
+        h1 { font-size: 5rem; color: #ff0000; text-shadow: 0 0 40px #f00; letter-spacing: 6px; }
+        .tagline { font-size: 2rem; color: #ffaaaa; margin: 20px 0 40px; }
+        input { padding: 15px; width: 320px; font-size: 1.3rem; background:#111; border:3px solid #500; color:white; }
+        button { padding: 18px 60px; font-size: 1.5rem; background:#900; color:white; border:4px solid #f00; margin:10px; cursor:pointer; }
+        button:hover { background:#c00; transform:scale(1.05); }
     </style>
 </head>
 <body>
     <div class="overlay">
-        <div class="content">
-            <img src="../images/Logo.png" class="logo" alt="Onlyus">
-
+        <div>
+            <img src="../images/Logo.png" width="200" alt="Onlyus" style="margin-bottom:20px;">
             <h1>ONLYUS</h1>
-            <div class="tagline">PRIVATE CHAT & VIDEO MESSAGING</div>
-            
-            <p style="font-size:1.35rem; max-width:620px; margin:0 auto 50px; line-height:1.5;">
+            <div class="tagline">PRIVATE CHAT & VIDEO</div>
+            <p style="max-width:600px; margin:0 auto 40px; font-size:1.3rem;">
                 End-to-end encrypted peer-to-peer.<br>
-                No tracking. No servers holding your data.<br>
-                <strong>Made by Billy Barbeau</strong>
+                No tracking. No servers.<br>
+                Made by Billy Barbeau.
             </p>
-
-            <input id="roomName" type="text" value="onlyus" maxlength="32" placeholder="Room name" />
-            <br>
+            <input id="roomName" type="text" value="onlyus" maxlength="32" />
+            <br><br>
             <button onclick="joinRoom()">JOIN ROOM</button>
-            <button onclick="alert('Room customization & profile coming soon')">CUSTOMIZE ROOM</button>
+            <button onclick="alert('Customize coming soon')">CUSTOMIZE ROOM</button>
         </div>
     </div>
 
     <script>
         function joinRoom() {
-            const room = document.getElementById('roomName').value.trim() || "onlyus";
-            window.location.href = `../newcall.html?room=${encodeURIComponent(room)}`;
+            const room = document.getElementById('roomName').value || "onlyus";
+            window.location.href = `../newcall.html?room=${room}`;
         }
     </script>
 </body>
